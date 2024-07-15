@@ -7,6 +7,7 @@ public class Main {
 		
 		
 		// -----연습----
+		// ------
 		
 		while(true) {
 			System.out.printf("명령어) ");
