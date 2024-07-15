@@ -5,6 +5,9 @@ public class Main {
 		System.out.println("== 프로그램 시작 ==");
 		Scanner sc = new Scanner(System.in);
 		
+		
+		// -----연습----
+		
 		while(true) {
 			System.out.printf("명령어) ");
 			
