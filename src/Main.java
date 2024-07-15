@@ -10,7 +10,6 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		int lastArticleId = 0;
-		
 		List<Article> articles = new ArrayList<>();
 		
 		while (true) {
@@ -32,11 +31,29 @@ public class Main {
 				String title = sc.nextLine();
 				System.out.printf("내용 : ");
 				String body = sc.nextLine();
-				//막상 자신있게 했는데 아무것도 모름
 				
-				System.out.println(++lastArticleId + "번 글이 생성되었습니다");
+				lastArticleId++;
+				
+				Article article = new Article(lastArticleId, title, body);
+				
+				articles.add(article);
+				
+				System.out.println(lastArticleId + "번 글이 생성되었습니다");
+				
 			} else if (cmd.equals("article list")) {
-				System.out.println("--여기는 수정해야하는데 어케하는지 몰라서 고민중--");
+				
+				if (articles.size() == 0) {
+					System.out.println("게시글이 없습니다");
+					continue;
+				}
+				
+				System.out.println("번호	|	제목");
+				
+				for (int i = articles.size() - 1; i >= 0; i--) {
+					Article article = articles.get(i);
+					System.out.printf("%d	|	%s\n", article.id, article.title);
+				}
+				
 			} else {
 				System.out.println("존재하지 않는 명령어 입니다");
 			}
@@ -48,14 +65,14 @@ public class Main {
 	}
 }
 
-class Article{
+class Article {
 	int id;
 	String title;
 	String body;
 	
-	Article(int id, String title, String body){
-		
+	public Article(int id, String title, String body) {
+		this.id = id;
+		this.title = title;
+		this.body = body;
 	}
-	
-	
 }
