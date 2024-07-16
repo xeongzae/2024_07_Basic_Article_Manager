@@ -54,7 +54,13 @@ public class Main {
 					System.out.printf("%d	|	%s\n", article.id, article.title);
 				}
 				
-			} else {
+			} else if (cmd.equals("article detail")) {
+				if(articles.size() == 0) {
+					System.out.println("게시물이 존재하지 않습니다");
+					
+				}
+			}
+			else {
 				System.out.println("존재하지 않는 명령어 입니다");
 			}
 		}
