@@ -1,4 +1,3 @@
-
 package com.exam.BAM.util;
 
 import java.time.LocalDateTime;
